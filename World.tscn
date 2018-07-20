@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/Elon.gd" type="Script" id=1]
+[ext_resource path="res://submarine.png" type="Texture" id=2]
+[ext_resource path="res://flame.png" type="Texture" id=3]
+[ext_resource path="res://flame2.png" type="Texture" id=4]
+[ext_resource path="res://pedoguy.png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 87.9163
+
+[node name="Node2D" type="Node2D" index="0"]
+
+[node name="Elon" type="Node2D" parent="." index="0"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Elon" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elon/KinematicBody2D" index="0"]
+
+position = Vector2( 0, 5.50007 )
+shape = SubResource( 1 )
+
+[node name="Bullet" type="Node2D" parent="Elon/KinematicBody2D" index="1"]
+
+position = Vector2( -9.67421, -74.9402 )
+scale = Vector2( 0.0808835, 0.0909939 )
+
+[node name="Sprite" type="Sprite" parent="Elon/KinematicBody2D" index="2"]
+
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Flame" type="Sprite" parent="Elon/KinematicBody2D/Sprite" index="0"]
+
+position = Vector2( -684.471, -274.394 )
+rotation = -3.14159
+scale = Vector2( 2.4792, -2.7891 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Flame2" type="Sprite" parent="Elon/KinematicBody2D/Sprite" index="1"]
+
+position = Vector2( -759.696, -277.849 )
+rotation = -3.14159
+scale = Vector2( 0.512861, -0.321937 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Elon2" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 300.553, 61.088 )
+z_index = -100
+_sections_unfolded = [ "Z Index" ]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Elon2" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elon2/KinematicBody2D" index="0"]
+
+position = Vector2( 0, 5.50007 )
+shape = SubResource( 1 )
+
+[node name="Bullet" type="Node2D" parent="Elon2/KinematicBody2D" index="1"]
+
+position = Vector2( -9.67421, -74.9402 )
+scale = Vector2( 0.0808835, 0.0909939 )
+
+[node name="Sprite" type="Sprite" parent="Elon2/KinematicBody2D" index="2"]
+
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+normal_map = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+
